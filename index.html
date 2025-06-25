@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>Hasitha Weerasooriya</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div id="header"></div>
-  <div id="about"></div>
-  <div id="projects"></div>
+
+  <main>
+    <section>
+      <h2>Welcome to My Site</h2>
+      <p>This is my personal website. Use the nav to explore.</p>
+    </section>
+  </main>
+
   <div id="footer"></div>
 
+  <script src="js/include.js"></script>
   <script>
-    function loadHTML(id, file) {
-      fetch(file)
-        .then(response => response.text())
-        .then(data => document.getElementById(id).innerHTML = data);
-    }
-
     loadHTML("header", "header.html");
-    loadHTML("about", "about.html");
-    loadHTML("projects", "projects.html");
     loadHTML("footer", "footer.html");
   </script>
-
 </body>
 </html>
