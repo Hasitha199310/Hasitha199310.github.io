@@ -1,131 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hasitha Weerasooriya - Personal website" />
-    <meta name="author" content="Hasitha Weerasooriya" />
-    <title>Hasitha Weerasooriya</title>
-    <style>
-        /* Add your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header, nav, main, footer {
-            display: block;
-            padding: 20px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-        }
-        .tab {
-            display: none;
-        }
-        .tab.active {
-            display: block;
-        }
-    </style>
-    <script>
-        // JavaScript to handle tab switching
-        function openTab(tabName) {
-            var i, tabContent;
-            tabContent = document.getElementsByClassName("tab");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
-            }
-            document.getElementById(tabName).style.display = "block";
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <title>Hasitha Weerasooriya</title>
 </head>
 <body>
-    <header>
-        <h1>Hasitha Weerasooriya</h1>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="openTab('education')">Education</a></li>
-                <li><a href="#" onclick="openTab('blog')">Blog</a></li>
-                <li><a href="#" onclick="openTab('news')">News</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="education" class="tab active">
-            <h2>Education</h2>
-            <p>I am currently a graduate student in Florida International University.</p>
-            <p></p>
-        </section>
-        
-        <section id="blog" class="tab">
-            <h2>Blog</h2>
-            <p>I will be sharing about what I am focusing month to month,Mathematics and all the random thoughts in my head.</p>
-            <p>Courses I am taking this semester-</p>
 
+  <div id="header"></div>
+  <div id="about"></div>
+  <div id="projects"></div>
+  <div id="footer"></div>
 
-	    <h3>Focus for March 2024</h3>
+  <script>
+    function loadHTML(id, file) {
+      fetch(file)
+        .then(response => response.text())
+        .then(data => document.getElementById(id).innerHTML = data);
+    }
 
-	    <dl>
-  		<dt>Fourier series,Fourier Transform,Discrete time Fourier transform,Discrete Fourier Transform</dt>
-  		<dd>- What is it meant by the phase?</dd>
-		<dd>- What is a real signal?</dd>
-  		<dt>Convolutional Neural networks-Deep dive</dt>
-  		<dt>Forward forward algorithm</dt>
-		<dt>Computer architecture</dt>
-  		<dd></dd>
-	   </dl>
-		
-	    <h3>Books I want to read</h3>
+    loadHTML("header", "header.html");
+    loadHTML("about", "about.html");
+    loadHTML("projects", "projects.html");
+    loadHTML("footer", "footer.html");
+  </script>
 
-	    <dl>
-  		<dt>Introduction to Linear Algebra (Gilbert Strang) 5th Edition</dt>
-  		<dd>- Introduction to linear algebra</dd>
-  		<dt></dt>
-  		<dd>- </dd>
-	   </dl>
-		
-	    <h3>Courses I want to follow</h3>
-
-	    <dl>
-  		<dt>MIT 6.450 Principles of Digital communication</dt>
-  		<dd>- <a href="https://www.youtube.com/watch?v=KXFF8m4uGDc&list=PL2AD004D035C24F21">youtube playlist</a></dd>
-  		<dt>Spring 2015 -- Computer Architecture Lectures -- Carnegie Mellon</dt>
-  		<dd>- <a href="https://www.youtube.com/playlist?list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq">youtube playlist</a></dd>
-	   	<dt>DNN Lectures -- Carnegie Mellon</dt>
-  		<dd>- <a href="https://www.youtube.com/playlist?list=PLp-0K3kfddPxRmjgjm0P1WT6H-gTqE8j9">youtube playlist</a></dd>
-
-
-
-</dl>
-
-        </section>
-        
-        <section id="news" class="tab">
-            <h2>News</h2>
-            <p>Stay updated with the latest news and updates.</p>
-            <p></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Hasitha Weerasooriya. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // By default, open the education tab
-        openTab('education');
-    </script>
 </body>
 </html>
